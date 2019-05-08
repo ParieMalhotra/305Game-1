@@ -1,33 +1,33 @@
-# Copyright (C) 1991-2009 Altera Corporation
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
-# applicable agreement for further details.
-
-# Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
-# File: C:\Users\Kevin Wang\Desktop\miniproject.csv
-# Generated on: Sun Apr 18 22:05:28 2010
-
-# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
-
+# Copyright (C) 1991-2009 Altera Corporation,,,,,,,,,,
+# Your use of Altera Corporation's design tools, logic functions ,,,,,,,,,
+# and other software and tools, and its AMPP partner logic ,,,,,,,,,
+# functions, and any output files from any of the foregoing ,,,,,,,,,
+# (including device programming or simulation files), and any ,,,,,,,,,
+# associated documentation or information are expressly subject ,,,,,,,,,,
+# to the terms and conditions of the Altera Program License ,,,,,,,,,,
+# Subscription Agreement, Altera MegaCore Function License ,,,,,,,,,
+# Agreement, or other applicable license agreement, including, ,,,,,,,
+# without limitation, that your use is for the sole purpose of ,,,,,,,,,
+# programming logic devices manufactured by Altera and sold by ,,,,,,,,,,
+# Altera or its authorized distributors.  Please refer to the ,,,,,,,,,,
+# applicable agreement for further details.,,,,,,,,,,
+,,,,,,,,,,
+# Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version,,,,,,,,,,
+# File: C:\Users\Kevin Wang\Desktop\miniproject.csv,,,,,,,,,,
+# Generated on: Sun Apr 18 22:05:28 2010,,,,,,,,,,
+,,,,,,,,,,
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.,,,,,,,,,,
+,,,,,,,,,,
 To,Direction,Location,I/O Bank,VREF Group,Reserved,Group,PCB layer,I/O Standard,Current Strength,Slew Rate
-blue_out,Output,PIN_K21,6,B6_N1,,,,,,
+blue_out[1],Output,PIN_K21,6,B6_N1,,,,,,
 bt1,Input,PIN_G3,1,B1_N0,,,,,,
 bt2,Input,PIN_H2,1,B1_N1,,,,,,
 clk,Input,PIN_G21,6,B6_N1,,,,,,
-green_out,Output,PIN_J17,6,B6_N0,,,,,,
+green_out[1],Output,PIN_J17,6,B6_N0,,,,,,
 horiz_sync_out,Output,PIN_L21,6,B6_N1,,,,,,
 mouse_clk,Bidir,PIN_P22,5,B5_N0,,,,,,
 mouse_data,Bidir,PIN_P21,5,B5_N0,,,,,,
-red_out,Output,PIN_H17,6,B6_N0,,,,,,
+red_out[1],Output,PIN_H17,6,B6_N0,,,,,,
 seg0_dec,Output,PIN_D13,7,B7_N1,,,,,,
 seg1_dec,Output,PIN_B15,7,B7_N1,,,,,,
 vert_sync_out,Output,PIN_L22,6,B6_N1,,,,,,
@@ -282,20 +282,20 @@ seg0[6],Unknown,PIN_F13,7,B7_N1,,,,,,
 ,Unknown,PIN_K15,6,B6_N1,,,,,,
 ,Unknown,PIN_K19,6,B6_N1,,,,,,
 ,Unknown,PIN_J15,6,B6_N1,,,,,,
-,Unknown,PIN_K22,6,B6_N1,,,,,,
-,Unknown,PIN_J22,,,,,,,,
-,Unknown,PIN_J21,6,B6_N1,,,,,,
+blue_out[0],Unknown,PIN_K22,6,B6_N1,,,,,,
+blue_out[2],Unknown,PIN_J22,,,,,,,,
+green_out[3],Unknown,PIN_J21,6,B6_N1,,,,,,
 ,Unknown,PIN_J16,6,B6_N1,,,,,,
 ,Unknown,PIN_K16,6,B6_N1,,,,,,
-,Unknown,PIN_H22,6,B6_N1,,,,,,
-,Unknown,PIN_H21,6,B6_N1,,,,,,
-,Unknown,PIN_K17,6,B6_N1,,,,,,
-,Unknown,PIN_K18,6,B6_N1,,,,,,
+green_out[0],Unknown,PIN_H22,6,B6_N1,,,,,,
+red_out[3],Unknown,PIN_H21,6,B6_N1,,,,,,
+green_out[2],Unknown,PIN_K17,6,B6_N1,,,,,,
+blue_out[3],Unknown,PIN_K18,6,B6_N1,,,,,,
 ,Unknown,PIN_J18,6,B6_N1,,,,,,
 ,Unknown,PIN_F22,6,B6_N1,,,,,,
 ,Unknown,PIN_F21,6,B6_N0,,,,,,
-,Unknown,PIN_H20,6,B6_N0,,,,,,
-,Unknown,PIN_H19,6,B6_N0,,,,,,
+red_out[2],Unknown,PIN_H20,6,B6_N0,,,,,,
+red_out[0],Unknown,PIN_H19,6,B6_N0,,,,,,
 ,Unknown,PIN_E22,6,B6_N0,,,,,,
 ,Unknown,PIN_E21,6,B6_N0,,,,,,
 ,Unknown,PIN_H18,6,B6_N0,,,,,,

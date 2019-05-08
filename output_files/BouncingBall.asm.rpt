@@ -1,6 +1,6 @@
 Assembler report for BouncingBall
-Fri Apr 12 10:25:05 2019
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+Wed May 08 17:19:13 2019
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/Mini Project Intro/output_files/BouncingBall.sof
+  5. Assembler Device Options: C:/Users/Tomas/Documents/Quartus_git/305Game/output_files/BouncingBall.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Apr 12 10:25:05 2019 ;
+; Assembler Status      ; Successful - Wed May 08 17:19:13 2019 ;
 ; Revision Name         ; BouncingBall                          ;
 ; Top-level Entity Name ; BouncingBall                          ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------+
-; Assembler Generated Files                           ;
-+-----------------------------------------------------+
-; File Name                                           ;
-+-----------------------------------------------------+
-; D:/Mini Project Intro/output_files/BouncingBall.sof ;
-+-----------------------------------------------------+
++----------------------------------------------------------------------------+
+; Assembler Generated Files                                                  ;
++----------------------------------------------------------------------------+
+; File Name                                                                  ;
++----------------------------------------------------------------------------+
+; C:/Users/Tomas/Documents/Quartus_git/305Game/output_files/BouncingBall.sof ;
++----------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Assembler Device Options: D:/Mini Project Intro/output_files/BouncingBall.sof ;
-+----------------+--------------------------------------------------------------+
-; Option         ; Setting                                                      ;
-+----------------+--------------------------------------------------------------+
-; Device         ; EP3C16F484C6                                                 ;
-; JTAG usercode  ; 0x000D7FBE                                                   ;
-; Checksum       ; 0x000D7FBE                                                   ;
-+----------------+--------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Tomas/Documents/Quartus_git/305Game/output_files/BouncingBall.sof ;
++----------------+-------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                             ;
++----------------+-------------------------------------------------------------------------------------+
+; Device         ; EP3C16F484C6                                                                        ;
+; JTAG usercode  ; 0x000D7DAA                                                                          ;
+; Checksum       ; 0x000D7DAA                                                                          ;
++----------------+-------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -102,14 +102,14 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Fri Apr 12 10:25:04 2019
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed May 08 17:19:12 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off BouncingBall -c BouncingBall
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 480 megabytes
-    Info: Processing ended: Fri Apr 12 10:25:05 2019
+    Info: Peak virtual memory: 4559 megabytes
+    Info: Processing ended: Wed May 08 17:19:13 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -4.498
-TNS   : -8.993
+Slack : -4.925
+TNS   : -58.040
 
 Type  : Slow 1200mV 85C Model Setup 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : -1.123
-TNS   : -7.070
+Slack : -1.030
+TNS   : -7.341
+
+Type  : Slow 1200mV 85C Model Hold 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
+Slack : 0.358
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 0.359
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : 0.360
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
@@ -31,19 +31,19 @@ Slack : 19.755
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -3.795
-TNS   : -7.587
+Slack : -4.177
+TNS   : -49.166
 
 Type  : Slow 1200mV 0C Model Setup 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : -0.896
-TNS   : -5.186
+Slack : -0.790
+TNS   : -5.389
 
 Type  : Slow 1200mV 0C Model Hold 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : 0.313
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.313
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
@@ -55,22 +55,22 @@ Slack : 9.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst3|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.749
+Slack : 19.750
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.147
-TNS   : -4.292
+Slack : -2.399
+TNS   : -28.269
 
 Type  : Fast 1200mV 0C Model Setup 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : -0.195
-TNS   : -0.375
-
-Type  : Fast 1200mV 0C Model Hold 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
-Slack : 0.188
-TNS   : 0.000
+Slack : -0.156
+TNS   : -0.412
 
 Type  : Fast 1200mV 0C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ball:inst1|VGA_SYNC:SYNC|vert_sync_out'
 Slack : 0.188
 TNS   : 0.000
 
