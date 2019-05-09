@@ -29,6 +29,7 @@ ENTITY ball IS
 Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 
    PORT(SIGNAL PB1, PB2, Clock 			: IN std_logic;
+		  signal left_button	: in std_logic;
 		  signal buttons : in STD_LOGIC_VECTOR(8 downto 0);
         SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0);
         SIGNAL Horiz_sync,Vert_sync		: OUT std_logic);		
@@ -95,17 +96,42 @@ END IF;
 END process RGB_Display;
 
 Move_Ball: process
+	variable counter : std_logic_vector(9 downto 0) := "0000000000";
 BEGIN
 			-- Move ball once every vertical sync
 	WAIT UNTIL vert_sync_int'event and vert_sync_int = '1';
 			-- Bounce off top or bottom of screen
-			IF ('0' & Ball_Y_pos) >= CONV_STD_LOGIC_VECTOR(480,10) - Size THEN
+			if	(left_button = '1') then -- if the button IS pressed then move up
+				Ball_Y_motion <=  CONV_STD_LOGIC_VECTOR(2,10);
+				counter := counter + "0000000001";
+			else 
 				Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+				counter := "0000000000";
+			end if;
+			
+			--check colisions 
+			IF (('0' & Ball_Y_pos) >= CONV_STD_LOGIC_VECTOR(480,10) - Size) THEN
+			if	(left_button = '0') then -- if the button is not pressed then move down
+				Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+			else 
+			 Ball_Y_motion <= "0000000000";--keep the ball in that position
+			 counter := "0000000000";
+			end if;
 			ELSIF Ball_Y_pos <= Size THEN
+			if (left_button = '1') then -- if the button IS pressed then move up
 				Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+			else 
+				Ball_Y_motion <= "0000000000";
+				counter := "0000000000";
+			end if;
 			END IF;
 			-- Compute next ball Y position
-				Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;
+				--if(left_button = '1') then 
+					--counter := std_logic_vector(counter sll 2);
+					Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion + (counter(9 downto 3));
+				--else 
+					--Ball_Y_pos <= Ball_Y_pos - Ball_Y_motion;
+				--end if;
 END process Move_Ball;
 
 END behavior;

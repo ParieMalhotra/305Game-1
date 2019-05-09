@@ -47,9 +47,16 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
+		(text "left_button" (rect 0 0 41 12)(font "Arial" ))
+		(text "left_button" (rect 21 75 62 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
 		(text "buttons[8..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "buttons[8..0]" (rect 21 75 69 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
+		(text "buttons[8..0]" (rect 21 91 69 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 200 32)

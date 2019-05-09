@@ -14,7 +14,7 @@
 
 # Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 # File: C:\Users\Tomas\Documents\Quartus_git\305Game\Miniproject resources\305_Project_Assignments.csv
-# Generated on: Wed May 08 17:33:33 2019
+# Generated on: Thu May 09 12:07:38 2019
 
 # Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
 
@@ -23,6 +23,7 @@ bt1,Input,PIN_G3,1,B1_N0,PIN_G3,,,,,
 bt2,Input,PIN_H2,1,B1_N1,PIN_H2,,,,,
 clk,Input,PIN_G21,6,B6_N1,PIN_G21,,,,,
 horiz_sync_out,Output,PIN_L21,6,B6_N1,PIN_L21,,,,,
+LEDG[0],Output,PIN_J1,1,B1_N1,PIN_J1,,,,,
 SW[8],Input,PIN_E4,1,B1_N0,PIN_E4,,,,,
 SW[7],Input,PIN_E3,1,B1_N0,PIN_E3,,,,,
 SW[6],Input,PIN_H7,1,B1_N0,PIN_H7,,,,,
@@ -74,7 +75,6 @@ LEDG[4],Unknown,PIN_F2,1,B1_N0,,,,,,
 LEDG[3],Unknown,PIN_H1,1,B1_N1,,,,,,
 LEDG[2],Unknown,PIN_J3,1,B1_N1,,,,,,
 LEDG[1],Unknown,PIN_J2,1,B1_N1,,,,,,
-LEDG[0],Unknown,PIN_J1,1,B1_N1,,,,,,
 SW[9],Unknown,PIN_D2,1,B1_N0,,,,,,
 seg2[0],Unknown,PIN_D15,7,B7_N0,,,,,,
 seg2[1],Unknown,PIN_A16,7,B7_N1,,,,,,
@@ -83,3 +83,4 @@ seg2[3],Unknown,PIN_E15,7,B7_N0,,,,,,
 seg2[4],Unknown,PIN_A17,7,B7_N1,,,,,,
 seg2[5],Unknown,PIN_B17,7,B7_N1,,,,,,
 seg2[6],Unknown,PIN_F14,7,B7_N0,,,,,,
+bt0,Unknown,PIN_F1,1,B1_N0,,,,,,
