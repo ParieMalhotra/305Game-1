@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BouncingBall
-Thu May 09 15:56:09 2019
+Fri May 10 20:40:06 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -14,15 +14,16 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: ball:inst1
- 14. Parameter Settings for User Entity Instance: pll:inst3|altpll:altpll_component
- 15. altpll Parameter Settings by Entity Instance
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  9. State Machine - |BouncingBall|MOUSE:inst4|mouse_state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: ball:inst1
+ 15. Parameter Settings for User Entity Instance: pll:inst3|altpll:altpll_component
+ 16. altpll Parameter Settings by Entity Instance
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +49,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 09 15:56:09 2019      ;
+; Analysis & Synthesis Status        ; Successful - Fri May 10 20:40:06 2019      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; BouncingBall                               ;
 ; Top-level Entity Name              ; BouncingBall                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 190                                        ;
-;     Total combinational functions  ; 165                                        ;
-;     Dedicated logic registers      ; 89                                         ;
-; Total registers                    ; 89                                         ;
-; Total pins                         ; 36                                         ;
+; Total logic elements               ; 359                                        ;
+;     Total combinational functions  ; 290                                        ;
+;     Dedicated logic registers      ; 208                                        ;
+; Total registers                    ; 208                                        ;
+; Total pins                         ; 53                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -163,23 +164,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                ;
-+------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
-+------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; Miniproject resources/vga_sync.vhd ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/vga_sync.vhd ;         ;
-; pll.vhd                            ; yes             ; User Wizard-Generated File         ; C:/Users/Tomas/Documents/Quartus_git/305Game/pll.vhd                            ;         ;
-; BouncingBall.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Tomas/Documents/Quartus_git/305Game/BouncingBall.bdf                   ;         ;
-; Miniproject resources/ball.vhd     ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/ball.vhd     ;         ;
-; Miniproject resources/lfsr.vhd     ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/lfsr.vhd     ;         ;
-; altpll.tdf                         ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/altpll.tdf               ;         ;
-; aglobal130.inc                     ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/aglobal130.inc           ;         ;
-; stratix_pll.inc                    ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/stratix_pll.inc          ;         ;
-; stratixii_pll.inc                  ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/stratixii_pll.inc        ;         ;
-; cycloneii_pll.inc                  ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/cycloneii_pll.inc        ;         ;
-; db/pll_altpll.v                    ; yes             ; Auto-Generated Megafunction        ; C:/Users/Tomas/Documents/Quartus_git/305Game/db/pll_altpll.v                    ;         ;
-+------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++---------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                       ; Library ;
++---------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
+; Miniproject resources/mouse.VHD       ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/mouse.VHD       ;         ;
+; Miniproject resources/vga_sync.vhd    ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/vga_sync.vhd    ;         ;
+; pll.vhd                               ; yes             ; User Wizard-Generated File         ; C:/Users/Tomas/Documents/Quartus_git/305Game/pll.vhd                               ;         ;
+; BouncingBall.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Tomas/Documents/Quartus_git/305Game/BouncingBall.bdf                      ;         ;
+; Miniproject resources/ball.vhd        ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/ball.vhd        ;         ;
+; Miniproject resources/lfsr.vhd        ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/lfsr.vhd        ;         ;
+; Miniproject resources/7segdecoder.vhd ; yes             ; User VHDL File                     ; C:/Users/Tomas/Documents/Quartus_git/305Game/Miniproject resources/7segdecoder.vhd ;         ;
+; altpll.tdf                            ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/altpll.tdf                  ;         ;
+; aglobal130.inc                        ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/aglobal130.inc              ;         ;
+; stratix_pll.inc                       ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/stratix_pll.inc             ;         ;
+; stratixii_pll.inc                     ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/stratixii_pll.inc           ;         ;
+; cycloneii_pll.inc                     ; yes             ; Megafunction                       ; c:/program files (x86)/quartus/libraries/megafunctions/cycloneii_pll.inc           ;         ;
+; db/pll_altpll.v                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/Tomas/Documents/Quartus_git/305Game/db/pll_altpll.v                       ;         ;
++---------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -187,31 +190,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 190                                                                          ;
+; Estimated Total logic elements              ; 359                                                                          ;
 ;                                             ;                                                                              ;
-; Total combinational functions               ; 165                                                                          ;
+; Total combinational functions               ; 290                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 47                                                                           ;
-;     -- 3 input functions                    ; 45                                                                           ;
-;     -- <=2 input functions                  ; 73                                                                           ;
+;     -- 4 input functions                    ; 94                                                                           ;
+;     -- 3 input functions                    ; 93                                                                           ;
+;     -- <=2 input functions                  ; 103                                                                          ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 89                                                                           ;
-;     -- arithmetic mode                      ; 76                                                                           ;
+;     -- normal mode                          ; 187                                                                          ;
+;     -- arithmetic mode                      ; 103                                                                          ;
 ;                                             ;                                                                              ;
-; Total registers                             ; 89                                                                           ;
-;     -- Dedicated logic registers            ; 89                                                                           ;
+; Total registers                             ; 208                                                                          ;
+;     -- Dedicated logic registers            ; 208                                                                          ;
 ;     -- I/O registers                        ; 0                                                                            ;
 ;                                             ;                                                                              ;
-; I/O pins                                    ; 36                                                                           ;
+; I/O pins                                    ; 53                                                                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                            ;
 ; Total PLLs                                  ; 1                                                                            ;
 ;     -- PLLs                                 ; 1                                                                            ;
 ;                                             ;                                                                              ;
 ; Maximum fan-out node                        ; pll:inst3|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 68                                                                           ;
-; Total fan-out                               ; 729                                                                          ;
-; Average fan-out                             ; 2.23                                                                         ;
+; Maximum fan-out                             ; 95                                                                           ;
+; Total fan-out                               ; 1540                                                                         ;
+; Average fan-out                             ; 2.54                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
 
@@ -220,13 +223,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; |BouncingBall                        ; 165 (0)           ; 89 (0)       ; 0           ; 0            ; 0       ; 0         ; 36   ; 0            ; |BouncingBall                                                             ;              ;
+; |BouncingBall                        ; 290 (1)           ; 208 (0)      ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |BouncingBall                                                             ;              ;
+;    |MOUSE:inst4|                     ; 110 (110)         ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|MOUSE:inst4                                                 ;              ;
 ;    |ball:inst1|                      ; 157 (92)          ; 79 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|ball:inst1                                                  ;              ;
 ;       |VGA_SYNC:SYNC|                ; 65 (65)           ; 57 (57)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|ball:inst1|VGA_SYNC:SYNC                                    ;              ;
 ;    |lfsr:inst2|                      ; 8 (8)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|lfsr:inst2                                                  ;              ;
 ;    |pll:inst3|                       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|pll:inst3                                                   ;              ;
 ;       |altpll:altpll_component|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|pll:inst3|altpll:altpll_component                           ;              ;
 ;          |pll_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|pll:inst3|altpll:altpll_component|pll_altpll:auto_generated ;              ;
+;    |sevensegdecoder:inst6|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|sevensegdecoder:inst6                                       ;              ;
+;    |sevensegdecoder:inst7|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BouncingBall|sevensegdecoder:inst7                                       ;              ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -240,16 +246,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------+------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+---------------------------------------+-----------------------------------------+
-; Register name                         ; Reason for Removal                      ;
-+---------------------------------------+-----------------------------------------+
-; ball:inst1|Ball_Y_motion[0]           ; Stuck at GND due to stuck port data_in  ;
-; ball:inst1|Ball_Y_motion[3..9]        ; Merged with ball:inst1|Ball_Y_motion[2] ;
-; ball:inst1|VGA_SYNC:SYNC|pixel_row[9] ; Stuck at GND due to stuck port data_in  ;
-; Total Number of Removed Registers = 9 ;                                         ;
-+---------------------------------------+-----------------------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BouncingBall|MOUSE:inst4|mouse_state                                                                                                                                                   ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; Name                          ; mouse_state.INPUT_PACKETS ; mouse_state.WAIT_CMD_ACK ; mouse_state.WAIT_OUTPUT_READY ; mouse_state.LOAD_COMMAND2 ; mouse_state.LOAD_COMMAND ; mouse_state.INHIBIT_TRANS ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+; mouse_state.INHIBIT_TRANS     ; 0                         ; 0                        ; 0                             ; 0                         ; 0                        ; 0                         ;
+; mouse_state.LOAD_COMMAND      ; 0                         ; 0                        ; 0                             ; 0                         ; 1                        ; 1                         ;
+; mouse_state.LOAD_COMMAND2     ; 0                         ; 0                        ; 0                             ; 1                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_OUTPUT_READY ; 0                         ; 0                        ; 1                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.WAIT_CMD_ACK      ; 0                         ; 1                        ; 0                             ; 0                         ; 0                        ; 1                         ;
+; mouse_state.INPUT_PACKETS     ; 1                         ; 0                        ; 0                             ; 0                         ; 0                        ; 1                         ;
++-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++----------------------------------------+-----------------------------------------+
+; Register name                          ; Reason for Removal                      ;
++----------------------------------------+-----------------------------------------+
+; ball:inst1|Ball_Y_motion[0]            ; Stuck at GND due to stuck port data_in  ;
+; MOUSE:inst4|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in  ;
+; MOUSE:inst4|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in  ;
+; MOUSE:inst4|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in  ;
+; MOUSE:inst4|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in  ;
+; MOUSE:inst4|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in  ;
+; ball:inst1|Ball_Y_motion[3..9]         ; Merged with ball:inst1|Ball_Y_motion[2] ;
+; MOUSE:inst4|cursor_row[9]              ; Stuck at GND due to stuck port data_in  ;
+; ball:inst1|VGA_SYNC:SYNC|pixel_row[9]  ; Stuck at GND due to stuck port data_in  ;
+; Total Number of Removed Registers = 19 ;                                         ;
++----------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,28 +284,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 89    ;
+; Total registers                              ; 208   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 132   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; lfsr:inst2|tmp[9]                      ; 2       ;
-; lfsr:inst2|tmp[7]                      ; 2       ;
-; lfsr:inst2|tmp[5]                      ; 2       ;
-; lfsr:inst2|tmp[3]                      ; 3       ;
-; lfsr:inst2|tmp[2]                      ; 3       ;
-; Total number of inverted registers = 5 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; lfsr:inst2|tmp[9]                       ; 2       ;
+; lfsr:inst2|tmp[7]                       ; 2       ;
+; lfsr:inst2|tmp[5]                       ; 2       ;
+; lfsr:inst2|tmp[3]                       ; 3       ;
+; lfsr:inst2|tmp[2]                       ; 3       ;
+; MOUSE:inst4|send_char                   ; 3       ;
+; MOUSE:inst4|SHIFTOUT[3]                 ; 1       ;
+; MOUSE:inst4|SHIFTOUT[5]                 ; 1       ;
+; MOUSE:inst4|SHIFTOUT[6]                 ; 1       ;
+; MOUSE:inst4|SHIFTOUT[7]                 ; 1       ;
+; MOUSE:inst4|SHIFTOUT[8]                 ; 1       ;
+; Total number of inverted registers = 11 ;         ;
++-----------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -286,9 +319,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BouncingBall|ball:inst1|\Move_Ball:counter[1]    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BouncingBall|ball:inst1|VGA_SYNC:SYNC|v_count[9] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |BouncingBall|ball:inst1|counter                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |BouncingBall|MOUSE:inst4|new_cursor_row[7]       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BouncingBall|ball:inst1|VGA_SYNC:SYNC|v_count[7] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |BouncingBall|ball:inst1|\Move_Ball:counter[2]    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |BouncingBall|MOUSE:inst4|cursor_column[0]        ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |BouncingBall|MOUSE:inst4|cursor_row[0]           ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |BouncingBall|ball:inst1|counter                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -699,7 +735,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -709,7 +745,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu May 09 15:56:07 2019
+    Info: Processing started: Fri May 10 20:40:02 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BouncingBall -c BouncingBall
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file miniproject resources/mouse.vhd
@@ -733,6 +769,9 @@ Info (12021): Found 3 design units, including 1 entities, in source file minipro
 Info (12021): Found 2 design units, including 1 entities, in source file miniproject resources/lfsr.vhd
     Info (12022): Found design unit 1: lfsr-arc1
     Info (12023): Found entity 1: lfsr
+Info (12021): Found 2 design units, including 1 entities, in source file miniproject resources/7segdecoder.vhd
+    Info (12022): Found design unit 1: sevensegdecoder-arc1
+    Info (12023): Found entity 1: sevensegdecoder
 Info (12127): Elaborating entity "BouncingBall" for the top level hierarchy
 Info (12128): Elaborating entity "ball" for hierarchy "ball:inst1"
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "ball:inst1|VGA_SYNC:SYNC"
@@ -797,24 +836,34 @@ Info (12133): Instantiated megafunction "pll:inst3|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:inst3|altpll:altpll_component|pll_altpll:auto_generated"
+Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst4"
+Warning (10036): Verilog HDL or VHDL warning at mouse.VHD(25): object "CHARIN" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at mouse.VHD(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse.VHD(155): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse.VHD(156): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mouse.VHD(157): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:inst2"
 Warning (10540): VHDL Signal Declaration warning at lfsr.vhd(12): used explicit default value for signal "seed" because signal was never assigned a value
 Warning (10492): VHDL Process Statement warning at lfsr.vhd(20): signal "seed" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at lfsr.vhd(21): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "sevensegdecoder" for hierarchy "sevensegdecoder:inst7"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "bt2"
-Info (21057): Implemented 238 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 24 output pins
-    Info (21061): Implemented 201 logic cells
+Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 372 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4657 megabytes
-    Info: Processing ended: Thu May 09 15:56:09 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Fri May 10 20:40:06 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
