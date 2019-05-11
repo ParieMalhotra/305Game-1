@@ -38,23 +38,6 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 104 136 272 152)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "bt2" (rect 5 0 20 12)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 48 152 104 168))
-)
-(pin
-	(input)
 	(rect 176 192 344 208)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "SW[8 .. 0]" (rect 5 0 55 12)(font "Arial" ))
@@ -615,6 +598,23 @@ applicable agreement for further details.
 		(circle (rect 31 12 39 20))
 	)
 )
+(symbol
+	(rect 480 136 512 168)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst8" (rect 3 21 26 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
 (connector
 	(pt 888 200)
 	(pt 888 312)
@@ -662,38 +662,6 @@ applicable agreement for further details.
 (connector
 	(pt 480 184)
 	(pt 520 184)
-)
-(connector
-	(pt 512 136)
-	(pt 512 120)
-)
-(connector
-	(pt 520 136)
-	(pt 512 136)
-)
-(connector
-	(pt 512 120)
-	(pt 328 120)
-)
-(connector
-	(pt 512 152)
-	(pt 512 144)
-)
-(connector
-	(pt 520 152)
-	(pt 512 152)
-)
-(connector
-	(pt 328 120)
-	(pt 328 144)
-)
-(connector
-	(pt 512 144)
-	(pt 328 144)
-)
-(connector
-	(pt 328 144)
-	(pt 272 144)
 )
 (connector
 	(pt 480 184)
@@ -857,7 +825,15 @@ applicable agreement for further details.
 	(pt 480 480)
 	(pt 544 480)
 )
-(junction (pt 328 144))
+(connector
+	(pt 496 136)
+	(pt 520 136)
+)
+(connector
+	(pt 520 136)
+	(pt 520 152)
+)
 (junction (pt 416 304))
 (junction (pt 480 480))
 (junction (pt 288 552))
+(junction (pt 520 136))
