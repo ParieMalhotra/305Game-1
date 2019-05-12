@@ -13,20 +13,23 @@ USE altera_mf.all;
 ENTITY char_rom IS
 	PORT
 	(
-		character_address	:	IN STD_LOGIC_VECTOR (5 DOWNTO 0);
-		font_row, font_col	:	IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 		clock				: 	IN STD_LOGIC ;
+		Red, Blue, Green: in std_logic_vector(3 DOWNTO 0);
 		pixel_row : in std_LOGIC_VECTOR(9 downto 0);
-		pixel_col : in std_LOGIC_VECTOR(9 downto 0);
-		rom_mux_output		:	OUT STD_LOGIC
+		pixel_column : in std_LOGIC_VECTOR(9 downto 0);
+		Red_out, Green_out, Blue_out : out std_LOGIC_VECTOR(3 downto 0)
+		--rom_mux_output		:	OUT STD_LOGIC
 	);
 END char_rom;
 
 
 ARCHITECTURE SYN OF char_rom IS
 
-	SIGNAL rom_data		: STD_LOGIC_VECTOR (7 DOWNTO 0);
-	SIGNAL rom_address	: STD_LOGIC_VECTOR (8 DOWNTO 0);
+	SIGNAL rom_data				: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL rom_address			: STD_LOGIC_VECTOR (8 DOWNTO 0);
+	signal rom_mux_output 		: std_LOGIC;
+	signal character_address	: STD_LOGIC_VECTOR (5 DOWNTO 0);
+	signal font_row, font_col	: STD_LOGIC_VECTOR (2 DOWNTO 0);
 
 	COMPONENT altsyncram
 	GENERIC (
@@ -54,6 +57,9 @@ ARCHITECTURE SYN OF char_rom IS
 
 BEGIN
 	--rom_mux_output	<= sub_wire0(7 DOWNTO 0);
+	--character_address <=  pixel_row(9 downto 4);
+	font_row <= pixel_row(3 downto 1) + "110";--why though
+	font_col <= pixel_column(3 downto 1);
 
 	altsyncram_component : altsyncram
 	GENERIC MAP (
@@ -78,12 +84,19 @@ BEGIN
 		q_a => rom_data
 	);
 																		 
-	rom_address <= "010011" & font_row when pixel_col <= "0000010000" else 
-						"000011" & font_row when pixel_col <= "0000100000" else
-						"001111" & font_row when pixel_col <= "0000110000" else
-						"010010" & font_row when pixel_col <= "0001000000" else
+	rom_address <= "010011" & font_row when pixel_column <= "0000010000" else 
+						"000011" & font_row when pixel_column <= "0000100000" else
+						"001111" & font_row when pixel_column <= "0000110000" else
+						"010010" & font_row when pixel_column <= "0001000000" else
 						"000101" & font_row;
-	rom_mux_output <= rom_data (CONV_INTEGER(NOT font_col(2 DOWNTO 0))) when pixel_row < "0000010000" and pixel_col < "0001010000" else --each character in this case is 16*16 original scale is 8*8
-							'0';
+	rom_mux_output <= rom_data (CONV_INTEGER(NOT font_col(2 DOWNTO 0))) when pixel_row < "0000010011"  and pixel_row > "0000000011" and pixel_column < "0001010000" and pixel_column > "0000000000" else --each character in this case is 16*16 original scale is 8*8
+							'0';--not need as an output
+	
+	Red_out <= red when rom_mux_output = '0' else 
+				  "0000";
+	Green_out <= green when rom_mux_output = '0' else 
+				  "0000";
+	Blue_out <= blue when rom_mux_output = '0' else 
+				  "0000";
 
 END SYN;
