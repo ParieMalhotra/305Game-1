@@ -14,7 +14,9 @@ Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 		  signal buttons : in STD_LOGIC_VECTOR(8 downto 0);
 		  signal pixel_row_in, pixel_column_in : in std_LOGIC_VECTOR(9 downto 0);
 		  signal vert_sync : in std_LOGIC;
-        SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0)
+        --SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0);
+		  signal rgb : out STD_LOGIC_VECTOR(11 DOWNTO 0);
+		  signal enable : out std_LOGIC
 		  );		
 END ball;
 
@@ -102,9 +104,9 @@ BEGIN
 			Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion + (counter(9 downto 3));
 END process Move_Ball;
 
-Red <= red_Data;
-Blue <= blue_Data;
-Green <= green_Data;
-
+rgb(11 downto 8) <= red_Data;
+rgb(7 downto 4) <= blue_Data;
+rgb(3 downto 0) <= green_Data;
+enable <= '1';
 END behavior;
 

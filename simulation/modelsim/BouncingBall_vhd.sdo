@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "BouncingBall")
-  (DATE "05/12/2019 15:39:40")
+  (DATE "05/15/2019 15:53:28")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Web Edition")
@@ -836,7 +836,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiii_lcell_comb")
-    (INSTANCE \\inst11\|rom_mux_output\~4\\)
+    (INSTANCE \\inst11\|enable\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (1229:1229:1229) (1313:1313:1313))
@@ -7452,7 +7452,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiii_lcell_comb")
-    (INSTANCE \\inst11\|rom_mux_output\~3\\)
+    (INSTANCE \\inst11\|enable\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (200:200:200) (243:243:243))
@@ -7510,7 +7510,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiii_lcell_comb")
-    (INSTANCE \\inst11\|rom_mux_output\~5\\)
+    (INSTANCE \\inst11\|enable\~2\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (202:202:202) (246:246:246))
@@ -7540,7 +7540,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiii_lcell_comb")
-    (INSTANCE \\inst11\|rom_mux_output\~6\\)
+    (INSTANCE \\inst11\|enable\~3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (200:200:200) (243:243:243))

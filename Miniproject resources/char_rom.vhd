@@ -14,10 +14,12 @@ ENTITY char_rom IS
 	PORT
 	(
 		clock				: 	IN STD_LOGIC ;
-		Red, Blue, Green: in std_logic_vector(3 DOWNTO 0);
+		--Red, Blue, Green: in std_logic_vector(3 DOWNTO 0);
 		pixel_row : in std_LOGIC_VECTOR(9 downto 0);
 		pixel_column : in std_LOGIC_VECTOR(9 downto 0);
-		Red_out, Green_out, Blue_out : out std_LOGIC_VECTOR(3 downto 0)
+		--Red_out, Green_out, Blue_out : out std_LOGIC_VECTOR(3 downto 0)
+		enable : out std_LOGIC;
+		rgb_out : out STD_LOGIC_VECTOR(11 DOWNTO 0)
 		--rom_mux_output		:	OUT STD_LOGIC
 	);
 END char_rom;
@@ -92,11 +94,9 @@ BEGIN
 	rom_mux_output <= rom_data (CONV_INTEGER(NOT font_col(2 DOWNTO 0))) when pixel_row < "0000010011"  and pixel_row > "0000000011" and pixel_column < "0001010000" and pixel_column > "0000000000" else --each character in this case is 16*16 original scale is 8*8
 							'0';--not need as an output
 	
-	Red_out <= red when rom_mux_output = '0' else 
-				  "0000";
-	Green_out <= green when rom_mux_output = '0' else 
-				  "0000";
-	Blue_out <= blue when rom_mux_output = '0' else 
-				  "0000";
+	rgb_out(11 downto 8) <= "0000";
+	rgb_out(7 downto 4) <= "0000";
+	rgb_out(3 downto 0) <= "0000";
 
+	enable <= rom_mux_output;
 END SYN;

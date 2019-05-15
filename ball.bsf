@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 248 192)
+	(rect 16 16 232 192)
 	(text "ball" (rect 5 0 16 12)(font "Arial" ))
 	(text "inst" (rect 8 160 20 172)(font "Arial" ))
 	(port
@@ -80,25 +80,18 @@ applicable agreement for further details.
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
-		(pt 232 32)
+		(pt 216 32)
 		(output)
-		(text "Red[3..0]" (rect 0 0 37 12)(font "Arial" ))
-		(text "Red[3..0]" (rect 174 27 211 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32)(line_width 3))
+		(text "rgb[11..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "rgb[11..0]" (rect 160 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
-		(pt 232 48)
+		(pt 216 48)
 		(output)
-		(text "Green[3..0]" (rect 0 0 44 12)(font "Arial" ))
-		(text "Green[3..0]" (rect 167 43 211 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(port
-		(pt 232 64)
-		(output)
-		(text "Blue[3..0]" (rect 0 0 36 12)(font "Arial" ))
-		(text "Blue[3..0]" (rect 175 59 211 71)(font "Arial" ))
-		(line (pt 232 64)(pt 216 64)(line_width 3))
+		(text "enable" (rect 0 0 24 12)(font "Arial" ))
+		(text "enable" (rect 171 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 1))
 	)
 	(parameter
 		"ADDR_WIDTH"
@@ -111,7 +104,7 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 216 160)(line_width 1))
+		(rectangle (rect 16 16 200 160)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 248 -64 348 16))
+	(annotation_block (parameter)(rect 232 -64 332 16))
 )

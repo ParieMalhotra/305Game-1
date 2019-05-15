@@ -1,5 +1,5 @@
 Fitter report for BouncingBall
-Sun May 12 15:39:32 2019
+Wed May 15 15:53:20 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Sun May 12 15:39:32 2019      ;
+; Fitter Status                      ; Successful - Wed May 15 15:53:20 2019      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; BouncingBall                               ;
 ; Top-level Entity Name              ; BouncingBall                               ;
@@ -1410,7 +1410,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MOUSE:inst4|filter[4]                                                                 ; 2       ;
 ; MOUSE:inst4|PACKET_CHAR1[1]~1                                                         ; 2       ;
 ; MOUSE:inst4|PACKET_CHAR1[1]~0                                                         ; 2       ;
-; char_rom:inst11|rom_mux_output~6                                                      ; 2       ;
+; char_rom:inst11|enable~3                                                              ; 2       ;
 ; VGA_SYNC:inst9|pixel_column[0]                                                        ; 2       ;
 ; VGA_SYNC:inst9|video_on_h                                                             ; 2       ;
 ; VGA_SYNC:inst9|video_on_v                                                             ; 2       ;
@@ -1682,9 +1682,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ball:inst1|Ball_on~2                                                                  ; 1       ;
 ; ball:inst1|Ball_on~1                                                                  ; 1       ;
 ; ball:inst1|Ball_on~0                                                                  ; 1       ;
-; char_rom:inst11|rom_mux_output~5                                                      ; 1       ;
-; char_rom:inst11|rom_mux_output~4                                                      ; 1       ;
-; char_rom:inst11|rom_mux_output~3                                                      ; 1       ;
+; char_rom:inst11|enable~2                                                              ; 1       ;
+; char_rom:inst11|enable~1                                                              ; 1       ;
+; char_rom:inst11|enable~0                                                              ; 1       ;
 ; char_rom:inst11|Mux0~3                                                                ; 1       ;
 ; char_rom:inst11|Mux0~2                                                                ; 1       ;
 ; char_rom:inst11|Mux0~1                                                                ; 1       ;
@@ -2513,7 +2513,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "seg2[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "seg2[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "seg2[6]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -2525,7 +2525,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.45 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.48 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2535,8 +2535,8 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file C:/Users/Tomas/Documents/Quartus_git/305Game/output_files/BouncingBall.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 20 warnings
     Info: Peak virtual memory: 4935 megabytes
-    Info: Processing ended: Sun May 12 15:39:33 2019
-    Info: Elapsed time: 00:00:10
+    Info: Processing ended: Wed May 15 15:53:20 2019
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:09
 
 

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
 
--- DATE "05/12/2019 15:39:40"
+-- DATE "05/15/2019 15:53:27"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -178,7 +178,7 @@ SIGNAL \inst11|rom_mux_output~1_combout\ : std_logic;
 SIGNAL \inst11|rom_mux_output~2_combout\ : std_logic;
 SIGNAL \inst11|Mux0~0_combout\ : std_logic;
 SIGNAL \inst11|Mux0~1_combout\ : std_logic;
-SIGNAL \inst11|rom_mux_output~4_combout\ : std_logic;
+SIGNAL \inst11|enable~1_combout\ : std_logic;
 SIGNAL \inst1|Ball_on~0_combout\ : std_logic;
 SIGNAL \inst1|Ball_on~2_combout\ : std_logic;
 SIGNAL \inst4|MOUSE_CLK_FILTER~1_combout\ : std_logic;
@@ -497,11 +497,11 @@ SIGNAL \inst11|rom_address[6]~11_combout\ : std_logic;
 SIGNAL \inst11|rom_address[7]~14_combout\ : std_logic;
 SIGNAL \inst11|Mux0~2_combout\ : std_logic;
 SIGNAL \inst11|Mux0~3_combout\ : std_logic;
-SIGNAL \inst11|rom_mux_output~3_combout\ : std_logic;
+SIGNAL \inst11|enable~0_combout\ : std_logic;
 SIGNAL \inst9|pixel_row[7]~feeder_combout\ : std_logic;
-SIGNAL \inst11|rom_mux_output~5_combout\ : std_logic;
+SIGNAL \inst11|enable~2_combout\ : std_logic;
 SIGNAL \inst11|rom_mux_output~0_combout\ : std_logic;
-SIGNAL \inst11|rom_mux_output~6_combout\ : std_logic;
+SIGNAL \inst11|enable~3_combout\ : std_logic;
 SIGNAL \inst9|blue_out~0_combout\ : std_logic;
 SIGNAL \SW[5]~input_o\ : std_logic;
 SIGNAL \inst9|pixel_row[4]~feeder_combout\ : std_logic;
@@ -710,33 +710,33 @@ SIGNAL \SW[1]~input_o\ : std_logic;
 SIGNAL \inst9|red_out~1_combout\ : std_logic;
 SIGNAL \SW[0]~input_o\ : std_logic;
 SIGNAL \inst9|red_out~2_combout\ : std_logic;
-SIGNAL \inst12|counter\ : std_logic_vector(25 DOWNTO 0);
-SIGNAL \inst2|tmp\ : std_logic_vector(10 DOWNTO 1);
-SIGNAL \inst4|new_cursor_column\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|SHIFTIN\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \inst9|pixel_row\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|inhibit_wait_count\ : std_logic_vector(10 DOWNTO 0);
-SIGNAL \inst4|PACKET_COUNT\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \inst4|INCNT\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst9|h_count\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst4|filter\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst4|cursor_row\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst9|red_out\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst9|pixel_column\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst9|blue_out\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst4|PACKET_CHAR1\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst1|Ball_Y_motion\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst3|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \inst1|Ball_Y_pos\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst11|altsyncram_component|auto_generated|q_a\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst4|SHIFTOUT\ : std_logic_vector(10 DOWNTO 0);
-SIGNAL \inst4|OUTCNT\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst9|v_count\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \inst9|green_out\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst4|PACKET_CHAR3\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \inst4|new_cursor_row\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst4|cursor_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst9|v_count\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|PACKET_CHAR1\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst9|blue_out\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst4|SHIFTOUT\ : std_logic_vector(10 DOWNTO 0);
+SIGNAL \inst9|red_out\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst9|pixel_row\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst1|Ball_Y_pos\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|OUTCNT\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst4|new_cursor_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|filter\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst2|tmp\ : std_logic_vector(10 DOWNTO 1);
+SIGNAL \inst3|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \inst4|new_cursor_row\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|SHIFTIN\ : std_logic_vector(8 DOWNTO 0);
+SIGNAL \inst4|PACKET_COUNT\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst9|green_out\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst4|PACKET_CHAR2\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst9|h_count\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst1|Ball_Y_motion\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|INCNT\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst12|counter\ : std_logic_vector(25 DOWNTO 0);
+SIGNAL \inst9|pixel_column\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|cursor_row\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \inst4|PACKET_CHAR3\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \inst4|inhibit_wait_count\ : std_logic_vector(10 DOWNTO 0);
+SIGNAL \inst11|altsyncram_component|auto_generated|q_a\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \inst4|ALT_INV_MOUSE_CLK_FILTER~clkctrl_outclk\ : std_logic;
 SIGNAL \inst12|ALT_INV_process_0~0_combout\ : std_logic;
 SIGNAL \inst4|ALT_INV_send_data~q\ : std_logic;
@@ -1675,9 +1675,9 @@ PORT MAP (
 	combout => \inst11|Mux0~1_combout\);
 
 -- Location: LCCOMB_X12_Y21_N12
-\inst11|rom_mux_output~4\ : cycloneiii_lcell_comb
+\inst11|enable~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst11|rom_mux_output~4_combout\ = (!\inst9|pixel_column\(9) & (!\inst9|pixel_row\(6) & (!\inst9|pixel_column\(7) & !\inst9|pixel_column\(8))))
+-- \inst11|enable~1_combout\ = (!\inst9|pixel_column\(9) & (!\inst9|pixel_row\(6) & (!\inst9|pixel_column\(7) & !\inst9|pixel_column\(8))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1689,7 +1689,7 @@ PORT MAP (
 	datab => \inst9|pixel_row\(6),
 	datac => \inst9|pixel_column\(7),
 	datad => \inst9|pixel_column\(8),
-	combout => \inst11|rom_mux_output~4_combout\);
+	combout => \inst11|enable~1_combout\);
 
 -- Location: LCCOMB_X14_Y20_N14
 \inst1|Ball_on~0\ : cycloneiii_lcell_comb
@@ -8958,9 +8958,9 @@ PORT MAP (
 	combout => \inst11|Mux0~3_combout\);
 
 -- Location: LCCOMB_X14_Y20_N8
-\inst11|rom_mux_output~3\ : cycloneiii_lcell_comb
+\inst11|enable~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst11|rom_mux_output~3_combout\ = (!\inst9|pixel_row\(5) & ((\inst9|pixel_column\(3) & (\inst11|Mux0~1_combout\)) # (!\inst9|pixel_column\(3) & ((\inst11|Mux0~3_combout\)))))
+-- \inst11|enable~0_combout\ = (!\inst9|pixel_row\(5) & ((\inst9|pixel_column\(3) & (\inst11|Mux0~1_combout\)) # (!\inst9|pixel_column\(3) & ((\inst11|Mux0~3_combout\)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8972,7 +8972,7 @@ PORT MAP (
 	datab => \inst9|pixel_row\(5),
 	datac => \inst9|pixel_column\(3),
 	datad => \inst11|Mux0~3_combout\,
-	combout => \inst11|rom_mux_output~3_combout\);
+	combout => \inst11|enable~0_combout\);
 
 -- Location: LCCOMB_X14_Y21_N14
 \inst9|pixel_row[7]~feeder\ : cycloneiii_lcell_comb
@@ -9020,9 +9020,9 @@ PORT MAP (
 	q => \inst9|pixel_row\(8));
 
 -- Location: LCCOMB_X12_Y21_N30
-\inst11|rom_mux_output~5\ : cycloneiii_lcell_comb
+\inst11|enable~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst11|rom_mux_output~5_combout\ = (\inst11|rom_mux_output~4_combout\ & (!\inst9|pixel_row\(7) & !\inst9|pixel_row\(8)))
+-- \inst11|enable~2_combout\ = (\inst11|enable~1_combout\ & (!\inst9|pixel_row\(7) & !\inst9|pixel_row\(8)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9030,10 +9030,10 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst11|rom_mux_output~4_combout\,
+	dataa => \inst11|enable~1_combout\,
 	datac => \inst9|pixel_row\(7),
 	datad => \inst9|pixel_row\(8),
-	combout => \inst11|rom_mux_output~5_combout\);
+	combout => \inst11|enable~2_combout\);
 
 -- Location: LCCOMB_X14_Y20_N22
 \inst11|rom_mux_output~0\ : cycloneiii_lcell_comb
@@ -9054,9 +9054,9 @@ PORT MAP (
 	combout => \inst11|rom_mux_output~0_combout\);
 
 -- Location: LCCOMB_X12_Y20_N28
-\inst11|rom_mux_output~6\ : cycloneiii_lcell_comb
+\inst11|enable~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst11|rom_mux_output~6_combout\ = (\inst11|rom_mux_output~2_combout\ & (\inst11|rom_mux_output~3_combout\ & (\inst11|rom_mux_output~5_combout\ & \inst11|rom_mux_output~0_combout\)))
+-- \inst11|enable~3_combout\ = (\inst11|rom_mux_output~2_combout\ & (\inst11|enable~0_combout\ & (\inst11|enable~2_combout\ & \inst11|rom_mux_output~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9065,15 +9065,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst11|rom_mux_output~2_combout\,
-	datab => \inst11|rom_mux_output~3_combout\,
-	datac => \inst11|rom_mux_output~5_combout\,
+	datab => \inst11|enable~0_combout\,
+	datac => \inst11|enable~2_combout\,
 	datad => \inst11|rom_mux_output~0_combout\,
-	combout => \inst11|rom_mux_output~6_combout\);
+	combout => \inst11|enable~3_combout\);
 
 -- Location: LCCOMB_X9_Y20_N14
 \inst9|blue_out~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst9|blue_out~0_combout\ = (\inst9|video_on_h~q\ & (\inst9|video_on_v~q\ & !\inst11|rom_mux_output~6_combout\))
+-- \inst9|blue_out~0_combout\ = (\inst9|video_on_h~q\ & (\inst9|video_on_v~q\ & !\inst11|enable~3_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9083,7 +9083,7 @@ GENERIC MAP (
 PORT MAP (
 	datab => \inst9|video_on_h~q\,
 	datac => \inst9|video_on_v~q\,
-	datad => \inst11|rom_mux_output~6_combout\,
+	datad => \inst11|enable~3_combout\,
 	combout => \inst9|blue_out~0_combout\);
 
 -- Location: IOIBUF_X0_Y22_N15
@@ -11721,7 +11721,7 @@ PORT MAP (
 -- Location: LCCOMB_X10_Y20_N30
 \inst9|blue_out~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \inst9|blue_out~4_combout\ = (!\inst11|rom_mux_output~6_combout\ & (\inst9|video_on_v~q\ & (\inst9|video_on_h~q\ & \inst1|Ball_on~5_combout\)))
+-- \inst9|blue_out~4_combout\ = (!\inst11|enable~3_combout\ & (\inst9|video_on_v~q\ & (\inst9|video_on_h~q\ & \inst1|Ball_on~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -11729,7 +11729,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst11|rom_mux_output~6_combout\,
+	dataa => \inst11|enable~3_combout\,
 	datab => \inst9|video_on_v~q\,
 	datac => \inst9|video_on_h~q\,
 	datad => \inst1|Ball_on~5_combout\,
